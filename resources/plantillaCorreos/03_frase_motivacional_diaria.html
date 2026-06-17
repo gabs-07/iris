@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Frase motivacional diaria</title>
+  <style>
+    @media screen and (max-width: 620px) {
+      .container { width: 100% !important; }
+      .content { padding: 30px 22px !important; }
+      .header { padding: 26px 22px 18px !important; }
+      .logo { width: 178px !important; }
+      .title { font-size: 25px !important; line-height: 32px !important; }
+      .quote { font-size: 22px !important; line-height: 33px !important; }
+      .button { display: block !important; width: 100% !important; box-sizing: border-box !important; }
+    }
+  </style>
+</head>
+<body style="margin:0; padding:0; background:#e0f2e9; font-family:Arial, Helvetica, sans-serif; color:#1d2b24;">
+  <div style="display:none; max-height:0; overflow:hidden; opacity:0; color:transparent;">
+    Una frase breve para iniciar tu día con enfoque y bienestar.
+  </div>
+
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#e0f2e9; margin:0; padding:28px 12px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" class="container" width="600" cellspacing="0" cellpadding="0" border="0" style="width:600px; max-width:600px; background:#ffffff; border-radius:22px; overflow:hidden; border:1px solid #cfe7da; box-shadow:0 12px 32px rgba(30,90,69,0.14);">
+          <tr>
+            <td class="header" align="center" style="padding:34px 34px 22px; background:#ffffff; border-bottom:1px solid #edf6f1;">
+              <img class="logo" src="../views/assets/Logos.png" width="220" alt="IRIS" style="display:block; width:220px; max-width:70%; height:auto; border:0;">
+            </td>
+          </tr>
+          <tr>
+            <td class="content" style="padding:36px 42px 42px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td align="center">
+                    <p style="margin:0 0 8px; font-size:13px; line-height:18px; font-weight:700; color:#2c7a5e; text-transform:uppercase; letter-spacing:1.8px;">Motivación diaria</p>
+                    <h1 class="title" style="margin:0; font-size:30px; line-height:38px; color:#1e5a45; font-weight:800; letter-spacing:-0.4px;">Una pausa para impulsarte</h1>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top:28px;">
+                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f4fbf7; border:1px solid #d7eee2; border-radius:20px;">
+                      <tr>
+                        <td style="padding:30px 28px; text-align:center;">
+                          <p class="quote" style="margin:0; font-size:26px; line-height:38px; color:#1e5a45; font-weight:700; letter-spacing:-0.3px;">“{{frase_motivacional}}”</p>
+                          <p style="margin:18px 0 0; font-size:14px; line-height:22px; color:#637369;">{{autor_frase}}</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top:24px; font-size:16px; line-height:26px; color:#34443b; text-align:center;">
+                    <p style="margin:0;">Hola <strong>{{nombre}}</strong>, que esta frase te acompañe durante el día y te ayude a mantener el enfoque en lo que estás construyendo.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding:30px 0 20px;">
+                    <a class="button" href="{{url_contenido}}" target="_blank" style="display:inline-block; background:#2c7a5e; color:#ffffff; text-decoration:none; font-size:16px; font-weight:700; padding:15px 34px; border-radius:999px; box-shadow:0 8px 18px rgba(44,122,94,0.24);">Ver más contenido</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top:4px; font-size:13px; line-height:21px; color:#637369; text-align:center;">
+                    <p style="margin:0;">Recibes este correo porque activaste las frases motivacionales diarias de IRIS.</p>
+                    <p style="margin:8px 0 0;"><a href="{{url_cancelar_suscripcion}}" style="color:#1e5a45; text-decoration:underline;">Cancelar suscripción</a></p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:24px 34px; background:#1e5a45; color:#dcefe6; text-align:center; font-size:12px; line-height:19px;">
+              <p style="margin:0 0 8px; font-weight:700; color:#ffffff;">IRIS</p>
+              <p style="margin:0;">Este correo fue enviado automáticamente. Por favor, no respondas a este mensaje.</p>
+              <p style="margin:8px 0 0; color:#bfe0cf;">© {{anio}} IRIS. Todos los derechos reservados.</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

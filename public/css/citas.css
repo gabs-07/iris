@@ -1,0 +1,209 @@
+/* =========================================
+   CITAS.CSS - Gestión de Citas (Diseño Compacto)
+   ========================================= */
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* --- Navegación por Pestañas --- */
+.tabs-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--bg-surface);
+    padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    opacity: 0.6;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+.tab-btn:hover { opacity: 1; }
+.tab-btn.active {
+    opacity: 1;
+    font-weight: 600;
+    color: var(--primary);
+}
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 3px 3px 0 0;
+}
+
+/* Manejo de visibilidad de las pestañas  */
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+/* --- Lista y Tarjetas de Citas Compactas --- */
+.appointments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Menor espacio entre tarjetas */
+}
+
+.appt-card-compact {
+    background-color: #ffffff;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 10px rgba(78, 121, 107, 0.05); /* Sombra más sutil */
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* 3 Columnas: Fecha | Detalles | Botones */
+    gap: 2rem;
+    align-items: center;
+    border: 1px solid var(--bg-surface);
+    transition: var(--transition);
+}
+
+.appt-card-compact:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 15px rgba(102, 178, 160, 0.1);
+}
+
+/* --- Bloque 1: Fecha Pequeña --- */
+.appt-date-small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-main);
+    min-width: 75px;
+    padding: 0.8rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.appt-date-small .month { font-size: 0.75rem; font-weight: 600; color: var(--primary); text-transform: uppercase; }
+.appt-date-small .day { font-size: 1.6rem; font-family: var(--font-heading); color: var(--text-dark); line-height: 1; margin: 2px 0; }
+.appt-date-small .year { font-size: 0.75rem; color: var(--text-dark); opacity: 0.7; }
+
+/* --- Bloque 2: Detalles (Centro) --- */
+.appt-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.appt-header-inline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+}
+
+.appt-header-inline .folio { opacity: 0.6; font-family: monospace; }
+.appt-header-inline .time { font-weight: 600; }
+
+.doc-info-compact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.doc-info-compact h3 { font-size: 1.1rem; margin-bottom: 0.1rem; color: var(--text-dark); }
+.doc-info-compact span { font-size: 0.85rem; opacity: 0.8; color: var(--text-dark); }
+
+/* --- Bloque 3: Acciones (Derecha) --- */
+.appt-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.8rem;
+}
+
+.btn-sm {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    width: auto; /* El botón solo ocupa lo necesario */
+}
+
+.btn-primary.disabled {
+    background-color: var(--bg-surface);
+    color: var(--text-dark);
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.6;
+}
+
+.action-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.btn-link:hover { opacity: 1; color: var(--primary); }
+.btn-link.danger { color: #e57373; text-decoration: none; }
+.btn-link.danger:hover { color: #d32f2f; text-decoration: underline; }
+
+/* --- Badges Actualizados --- */
+.status-badge { padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+.status-badge.confirmed { background-color: rgba(102, 178, 160, 0.15); color: #4e796b; }
+.status-badge.completed { background-color: var(--bg-surface); color: var(--text-dark); }
+.status-badge.cancelled { background-color: rgba(229, 115, 115, 0.1); color: #d32f2f; }
+
+/* --- Estilos para Citas Pasadas/Canceladas --- */
+.past-appt, .cancelled-appt { background-color: var(--bg-main); border-color: transparent; }
+.past-appt .appt-date-small, .cancelled-appt .appt-date-small { background-color: #ffffff; opacity: 0.8; }
+.strike { text-decoration: line-through; opacity: 0.6; }
+
+/* --- Responsive --- */
+@media (max-width: 850px) {
+    .appt-card-compact {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .appt-actions {
+        align-items: flex-start;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        border-top: 1px solid var(--bg-surface);
+        padding-top: 1rem;
+    }
+}

@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importación de estilos personalizados */
+@import './global.css';
+@import './header.css';
+@import './login.css';

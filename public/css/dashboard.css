@@ -1,0 +1,1101 @@
+/* =========================================
+   DASHBOARD.CSS - Panel profesional para psicólogos
+   ========================================= */
+
+.dashboard-body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-color: var(--bg-main);
+    overflow: hidden;
+}
+
+/* El menú lateral vive en sidebar.css para evitar duplicación. */
+
+.dashboard-main {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 1.6rem 2rem;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.header-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.badge {
+    display: inline-flex;
+    padding: 0.45rem 0.95rem;
+    background-color: var(--primary-light);
+    color: var(--text-dark);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.welcome-text h1 {
+    font-size: 2.25rem;
+    margin: 0;
+}
+
+.welcome-text p {
+    max-width: 560px;
+    color: var(--text-body);
+    line-height: 1.7;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.notification-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border: 0;
+    border-radius: 999px;
+    background-color: #ffffff;
+    color: var(--text-dark);
+    box-shadow: var(--shadow-xs);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.notification-chip:hover {
+    transform: translateY(-1px);
+    background-color: rgba(61, 155, 122, 0.08);
+    color: var(--primary-dark);
+}
+
+.notification-chip svg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.profile-chip {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.95rem 1rem;
+    border-radius: var(--radius-full);
+    background-color: #ffffff;
+    box-shadow: var(--shadow-xs);
+}
+
+.profile-info strong {
+    display: block;
+    color: var(--text-dark);
+}
+
+.profile-info span {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.metric-card {
+    background-color: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.25s ease;
+    border: 1px solid transparent;
+}
+
+.metric-card:hover {
+    border-color: rgba(61, 155, 122, 0.14);
+}
+
+.metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.metric-header span {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.metric-header strong {
+    font-size: 2rem;
+    color: var(--text-dark);
+}
+
+.metric-card p {
+    color: var(--text-body);
+    line-height: 1.75;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: 2fr 0.95fr;
+    gap: 1rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    align-items: start;
+    margin-top: 1.25rem;
+}
+
+.dash-card {
+    background-color: #ffffff;
+    border-radius: var(--radius-xl);
+    padding: 1.2rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.diary-card {
+    gap: 1.1rem;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.card-top h2 {
+    margin: 0;
+    font-size: 1.35rem;
+}
+
+.card-subtitle {
+    margin-top: 0.55rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+
+.appointment-card {
+    gap: 1rem;
+}
+
+.card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.card-date {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.appointment-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1rem;
+    border-radius: 1.4rem;
+    background-color: var(--bg-main);
+    transition: background-color 0.2s ease;
+}
+
+.appointment-row:hover {
+    background-color: var(--bg-surface-2);
+}
+
+.appt-avatar {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #81b790, #afcdb0);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.appt-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.appt-info strong {
+    display: block;
+    font-size: 0.98rem;
+    color: var(--text-dark);
+}
+
+.appt-info span {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+}
+
+.appt-time {
+    padding: 0.65rem 0.95rem;
+    border-radius: 1rem;
+    background-color: rgba(61, 155, 122, 0.14);
+    color: var(--primary-dark);
+    font-weight: 700;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.diary-label {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.diary-textarea {
+    width: 100%;
+    min-height: 140px;
+    resize: vertical;
+    border: 1px solid rgba(61, 155, 122, 0.16);
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.1rem;
+    font: inherit;
+    color: var(--text-dark);
+    background-color: var(--bg-main);
+    box-sizing: border-box;
+}
+
+.diary-textarea:focus {
+    outline: 2px solid rgba(61, 155, 122, 0.22);
+    border-color: rgba(61, 155, 122, 0.3);
+}
+
+.emoji-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.emoji-selector-title {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.emoji-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.emoji-option {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    background-color: var(--bg-main);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.emoji-option:hover {
+    transform: translateY(-1px);
+    border-color: rgba(61, 155, 122, 0.2);
+}
+
+.emoji-option span {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.emoji-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.emoji-option input:checked + span {
+    background-color: rgba(61, 155, 122, 0.12);
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+}
+
+.diary-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.diary-helper {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+.diary-status {
+    min-height: 1.5rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+    margin-top: -0.2rem;
+}
+
+.diary-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.1rem;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, rgba(61, 155, 122, 0.12), rgba(61, 155, 122, 0.04));
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.diary-summary strong {
+    font-size: 1.8rem;
+    color: var(--primary-dark);
+}
+
+.diary-entries {
+    display: grid;
+    gap: 1rem;
+}
+
+.diary-entry {
+    background-color: var(--bg-main);
+    border-radius: var(--radius-lg);
+    padding: 1.1rem;
+    border: 1px solid rgba(61, 155, 122, 0.12);
+    display: grid;
+}
+
+.diary-entry-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.diary-entry-top h3 {
+    margin-top: 0.25rem;
+    font-size: 1.15rem;
+}
+
+.diary-entry-date {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    text-transform: capitalize;
+}
+
+.diary-entry-emoji {
+    font-size: 1.7rem;
+    line-height: 1;
+}
+
+.diary-entry-text {
+    color: var(--text-body);
+    line-height: 1.75;
+    white-space: pre-wrap;
+}
+
+.diary-empty {
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    background-color: var(--bg-main);
+    color: var(--text-muted);
+    border: 1px dashed rgba(61, 155, 122, 0.15);
+}
+
+.appointment-list,
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.appointment-item {
+    display: grid;
+    grid-template-columns: 50px minmax(0, 1fr) min-content;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 0.9rem;
+    background-color: var(--bg-main);
+    border-radius: var(--radius-md);
+}
+
+.task-item {
+    display: flex;
+    grid-template-columns: 14px minmax(0, 1fr);
+    gap: 0.85rem;
+    padding: 0.85rem 0.95rem;
+    background-color: var(--bg-main);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+}
+
+.task-item:hover {
+    background-color: rgba(61, 155, 122, 0.12);
+    border-color: rgba(61, 155, 122, 0.25);
+}
+
+.task-info-panel {
+    margin-top: 0.5rem;
+    padding: 1rem 1.1rem;
+    border-radius: var(--radius-md);
+    background: linear-gradient(180deg, rgba(61, 155, 122, 0.08), rgba(61, 155, 122, 0.02));
+    border: 1px solid rgba(61, 155, 122, 0.12);
+}
+
+.task-info-panel h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding-left: 1rem;
+}
+
+.info-list li {
+    color: var(--text-body);
+    line-height: 1.6;
+}
+
+.info-list strong {
+    color: var(--text-dark);
+}
+
+.appointment-time {
+    font-weight: 700;
+    color: var(--primary-dark);
+    font-size: 0.95rem;
+}
+
+.appointment-details strong,
+.task-item strong {
+    display: block;
+    color: var(--text-dark);
+}
+
+.appointment-details span,
+.task-item p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.btn-primary-small {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    width: auto;
+    white-space: nowrap;
+    background-color: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-primary-small:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-outline.btn-sm {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+}
+
+.support-card {
+    display: grid;
+    gap: 1rem;
+}
+
+.support-card h2 {
+    margin: 0;
+}
+
+.support-card p {
+    color: var(--text-body);
+    line-height: 1.75;
+}
+
+.support-note {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.btn-primary.btn-lg {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.3rem;
+}
+
+.escucha-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.9rem 1rem;
+    border-radius: var(--radius-full);
+    background-color: #ffffff;
+    box-shadow: var(--shadow-xs);
+}
+
+.toggle-label {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.switch {
+    position: relative;
+    width: 46px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d9d9d9;
+    transition: 0.4s;
+    border-radius: 999px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #ffffff;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+@media (max-width: 900px) {
+    .dashboard-body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 1.5rem 1rem;
+    }
+
+    .dashboard-main {
+        padding: 1.5rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-item,
+    .task-item {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+    }
+
+    .card-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* Solicitudes de cita */
+.requests-card .request-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.request-item {
+    display: flex;
+    flex-direction: column;    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    background: var(--bg-main);
+    border-radius: var(--radius-md);
+    flex-wrap: wrap;
+}
+
+.request-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.request-info strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.request-info span {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.request-note {
+    font-style: italic;
+    margin-top: 0.2rem;
+    font-size: 0.8rem !important;
+    color: var(--primary-dark) !important;
+}
+
+.request-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.requests-footer {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.full-width {
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 640px) {
+    .request-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .request-actions {
+        justify-content: flex-end;
+    }
+}
+/* =========================================
+   Modal y solicitudes del dashboard profesional
+   ========================================= */
+.requests-card .card-top {
+    align-items: flex-start;
+}
+
+.requests-card .request-item {
+    flex-direction: row;
+    align-items: center;
+}
+
+.request-detail-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(15, 23, 42, 0.45);
+}
+
+.request-detail-modal.is-open {
+    display: flex;
+}
+
+.request-detail-card {
+    position: relative;
+    width: min(720px, 96vw);
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    padding: 1.5rem;
+}
+
+.request-detail-card h2 {
+    margin: 0.35rem 2.5rem 1rem 0;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0.9rem;
+    right: 0.9rem;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--bg-main);
+    color: var(--text-dark);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background: #fde8e8;
+    color: #ad2f2f;
+}
+
+.request-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+}
+
+.request-detail-grid div {
+    padding: 0.95rem;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    background: var(--bg-main);
+}
+
+.request-detail-grid span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.request-detail-grid strong,
+.request-detail-grid p {
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.request-detail-wide {
+    grid-column: 1 / -1;
+}
+
+.request-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.request-danger {
+    border-color: #e57373;
+    color: #ad2f2f;
+}
+
+.request-danger:hover {
+    box-shadow: 0 8px 20px rgba(229, 115, 115, 0.2);
+}
+
+@media (max-width: 680px) {
+    .requests-card .request-item,
+    .request-modal-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .request-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estado visual reutilizable para solicitudes resueltas del psicólogo */
+.requests-card .request-item.is-resolved,
+.request-list .request-item.is-resolved {
+    opacity: 0.78;
+}
+
+.request-status.status-resolved {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    background: var(--bg-main);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+/* =========================================
+   Propuesta de nuevo horario para solicitudes
+   ========================================= */
+.request-proposal-panel {
+    display: none;
+    margin: 1rem 0 1.15rem;
+    padding: 1rem;
+    border: 1px solid rgba(61, 155, 122, 0.18);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(180deg, rgba(61, 155, 122, 0.08), rgba(61, 155, 122, 0.03));
+}
+
+.request-proposal-panel.is-open {
+    display: block;
+}
+
+.request-proposal-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.request-proposal-icon {
+    width: 42px;
+    height: 42px;
+    display: inline-grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: #ffffff;
+    color: var(--primary-dark);
+    box-shadow: var(--shadow-xs);
+}
+
+.request-proposal-header h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.12rem;
+}
+
+.request-proposal-header p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.request-proposal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+.request-proposal-grid label {
+    display: grid;
+    gap: 0.4rem;
+    color: var(--text-dark);
+    font-weight: 800;
+}
+
+.request-proposal-grid input,
+.request-proposal-grid select,
+.request-proposal-grid textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 0.78rem 0.85rem;
+    background: #ffffff;
+    color: var(--text-dark);
+    font: inherit;
+}
+
+.request-proposal-grid textarea {
+    resize: vertical;
+    min-height: 88px;
+}
+
+.request-proposal-grid input:focus,
+.request-proposal-grid select:focus,
+.request-proposal-grid textarea:focus {
+    outline: 2px solid rgba(61, 155, 122, 0.18);
+    border-color: var(--primary);
+}
+
+.request-proposal-wide {
+    grid-column: 1 / -1;
+}
+
+.request-proposal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.proposal-summary {
+    margin-top: 0.75rem;
+    padding: 0.72rem 0.85rem;
+    border-radius: var(--radius-md);
+    background: rgba(61, 155, 122, 0.09);
+    color: var(--primary-dark);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.proposal-summary strong {
+    color: var(--text-dark);
+}
+
+@media (max-width: 680px) {
+    .request-proposal-header {
+        align-items: center;
+    }
+
+    .request-proposal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .request-proposal-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* Modo Escucha y auxilios activos */
+.escucha-copy {
+    display: grid;
+    gap: 0.1rem;
+}
+
+.escucha-copy small {
+    color: var(--text-muted, #6c7a73);
+    font-weight: 600;
+}
+
+.auxilio-professional-panel {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.35rem;
+    margin-bottom: 1.25rem;
+    border-radius: 28px;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    box-shadow: var(--shadow-xs);
+}
+
+.auxilio-professional-panel h2 {
+    margin: 0.35rem 0 0.25rem;
+}
+
+.auxilio-professional-panel p {
+    margin: 0;
+    color: var(--text-muted, #6c7a73);
+}
+
+.auxilio-professional-list {
+    display: grid;
+    gap: 0.75rem;
+    min-width: min(420px, 100%);
+}
+
+.auxilio-professional-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.85rem 1rem;
+    border-radius: 18px;
+    background: #ffffff;
+}
+
+.auxilio-professional-item div {
+    display: grid;
+    gap: 0.15rem;
+}
+
+.auxilio-professional-item span {
+    color: var(--text-muted, #6c7a73);
+    font-size: 0.92rem;
+}
+
+@media (max-width: 860px) {
+    .auxilio-professional-panel,
+    .auxilio-professional-item {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}

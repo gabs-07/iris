@@ -1,0 +1,572 @@
+/* =========================================
+   COMUNIDAD.CSS - Foro y Espacio Seguro SaaS
+   ========================================= */
+
+/* --- Layout Principal --- */
+.community-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px; /* Feed ancho, Sidebar derecha fija */
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* --- Caja de Nueva Publicación --- */
+.create-post-card {
+    background-color: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 2rem;
+    border: 1px solid var(--bg-surface);
+}
+
+.create-post-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.greeting {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.create-post-card textarea {
+    width: 100%;
+    background-color: var(--bg-main); /* #f8f6f1 */
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    resize: vertical;
+    min-height: 80px;
+    transition: var(--transition);
+}
+
+.create-post-card textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: #ffffff;
+}
+
+.create-post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    border-top: 1px dashed var(--bg-surface);
+    padding-top: 1rem;
+}
+
+/* Toggle Pequeño para Anonimato */
+.toggle-anonymous {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.switch-small { position: relative; display: inline-block; width: 34px; height: 18px; }
+.switch-small input { opacity: 0; width: 0; height: 0; }
+.slider-small { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
+.slider-small:before { position: absolute; content: ""; height: 14px; width: 14px; left: 2px; bottom: 2px; background-color: white; transition: .4s; border-radius: 50%; }
+.switch-small input:checked + .slider-small { background-color: var(--primary); }
+.switch-small input:checked + .slider-small:before { transform: translateX(16px); }
+.toggle-text { font-size: 0.85rem; color: var(--text-dark); opacity: 0.8; font-weight: 500; }
+
+/* --- Tarjetas de Publicación (Feed) --- */
+.feed-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.post-card {
+    background-color: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--bg-surface);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.post-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.anonymous-avatar { background-color: var(--bg-surface); color: var(--text-dark); opacity: 0.6; }
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.author-info strong { color: var(--text-dark); font-size: 1rem; }
+.post-time { font-size: 0.75rem; color: var(--text-dark); opacity: 0.6; }
+
+.options-btn {
+    background: none; border: none; font-size: 1.2rem; color: var(--text-dark); opacity: 0.5; cursor: pointer;
+}
+
+/* Etiquetas de Rol */
+.role-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.role-badge.specialist { background-color: rgba(102, 178, 160, 0.15); color: var(--primary); border: 1px solid rgba(102, 178, 160, 0.3); }
+
+.post-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.post-interactions {
+    display: flex;
+    gap: 1.5rem;
+    border-top: 1px solid var(--bg-surface);
+    padding-top: 1rem;
+}
+
+.interact-btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: var(--text-dark);
+    opacity: 0.7;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.interact-btn:hover, .interact-btn.active-reply {
+    opacity: 1;
+    color: var(--primary);
+}
+
+/* --- Sección de Comentarios --- */
+.comments-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--bg-surface);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.comment-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.comment-body {
+    background-color: var(--bg-main);
+    padding: 1rem;
+    border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md);
+    flex: 1;
+}
+
+.comment-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.3rem;
+}
+
+.comment-author strong { font-size: 0.85rem; color: var(--text-dark); }
+.comment-body p { font-size: 0.85rem; line-height: 1.5; color: var(--text-dark); margin: 0; opacity: 0.9; }
+
+/* Estilo destacado para comentarios del Psicólogo */
+.professional-reply .comment-body {
+    background-color: #ffffff;
+    border: 1px solid var(--primary); /* Borde verde para resaltar autoridad */
+    box-shadow: 0 4px 10px rgba(102, 178, 160, 0.05);
+}
+.specialist-avatar { background-color: var(--primary); color: white; }
+
+/* Input para responder */
+.reply-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.reply-input {
+    flex: 1;
+    background-color: var(--bg-main);
+    border: 1px solid var(--bg-surface);
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+}
+.reply-input:focus { outline: none; border-color: var(--primary); background-color: #ffffff; }
+
+.send-reply-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+.send-reply-btn:hover { background-color: var(--text-dark); }
+
+/* --- Columna Derecha (Normas e Info) --- */
+.info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: sticky;
+    top: 2rem;
+}
+
+.side-card {
+    background-color: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--bg-surface);
+}
+
+.side-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--bg-main);
+    padding-bottom: 0.5rem;
+}
+
+.guidelines-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.guidelines-card li {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.4;
+    opacity: 0.85;
+}
+
+.guidelines-card li strong { color: var(--text-dark); }
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.topic-tag {
+    background-color: var(--bg-main);
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.topic-tag:hover {
+    background-color: rgba(102, 178, 160, 0.15);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+    .community-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .info-column {
+        position: relative;
+        top: 0;
+        flex-direction: row; /* Coloca las tarjetas lado a lado en móvil/tablet si hay espacio */
+    }
+
+    .side-card { flex: 1; }
+}
+
+@media (max-width: 768px) {
+    .info-column { flex-direction: column; }
+    .create-post-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .create-post-actions button { width: 100%; }
+}
+
+/* =========================================
+   MODAL DE NORMAS (MÓVIL)
+   ========================================= */
+
+/* Ocultar la tarjeta lateral de normas en móviles */
+@media (max-width: 900px) {
+    .community-layout {
+        grid-template-columns: 1fr;
+    }
+    .guidelines-desktop {
+        display: none !important;
+    }
+}
+
+/* Estilos del Fondo del Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(28, 46, 40, 0.6);
+    backdrop-filter: blur(5px);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 3000;
+    opacity: 0; visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Estado activo del Modal */
+.modal-overlay.active {
+    opacity: 1; visibility: visible;
+}
+
+/* Caja Blanca del Modal */
+.normas-modal-content {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    width: 90%;
+    max-width: 400px;
+    padding: 1.5rem;
+    transform: translateY(30px);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.modal-overlay.active .normas-modal-content {
+    transform: translateY(0);
+}
+
+/* Cabecera del Modal */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid var(--bg-surface);
+    padding-bottom: 0.8rem;
+}
+
+.modal-header h2 {
+    font-size: 1.15rem;
+    color: var(--text-dark);
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    line-height: 1;
+}
+
+/* =========================
+   COMMUNITY TOPBAR
+========================= */
+
+.community-topbar{
+    margin-bottom: 2rem;
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+
+.search-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon{
+    position: absolute;
+    left: 18px;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.community-search{
+    width: 100%;
+    padding: 1rem 1rem 1rem 3.2rem;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+
+    background: white;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    transition: all 0.25s ease;
+
+    box-shadow:
+        0 2px 10px rgba(15, 23, 42, 0.03);
+}
+
+.community-search::placeholder{
+    color: #94a3b8;
+}
+
+.community-search:focus{
+    outline: none;
+
+    border-color: --primary;
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.12),
+        0 8px 25px rgba(99, 102, 241, 0.08);
+}
+
+/* =========================
+   SIDEBAR TITLE
+========================= */
+
+.sidebar-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 1.2rem;
+}
+
+.sidebar-title h3{
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.sidebar-title a{
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #6366f1;
+}
+
+/* =========================
+   MODERN TAGS
+========================= */
+
+.modern-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    padding: 1rem 0 0 0
+}
+
+.modern-tag{
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #f5f3ff
+        );
+
+    color: #3d9b7a;
+
+    padding:
+        0.75rem 1rem;
+
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+    box-shadow:
+        0 4px 10px rgba(99, 241, 135, 0.08);
+}
+
+.modern-tag:hover{
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 4px 10px rgba(99, 241, 135, 0.08);
+
+    background:
+        linear-gradient(
+            135deg,
+            #e0e7ff,
+            #ede9fe
+        );
+}
+
+.modern-tag.active{
+    background:
+        linear-gradient(
+            135deg,
+            #76f163,
+            #3aed8b
+        );
+
+    color: white;
+
+    box-shadow:
+        0 10px 25px rgba(99, 241, 137, 0.35);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px){
+
+    .community-search{
+        font-size: 0.9rem;
+    }
+
+    .modern-tags{
+        gap: 0.6rem;
+    }
+
+    .modern-tag{
+        padding: 0.65rem 0.9rem;
+        font-size: 0.8rem;
+    }
+
+}

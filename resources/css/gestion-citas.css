@@ -1,0 +1,1706 @@
+/* =========================================
+   GESTION-CITAS.CSS
+   Estilos para gestión de sesiones
+   Reutiliza global.css, dashboard.css, sidebar.css, citas.css y agenda.css
+   ========================================= */
+
+.appointment-page .dashboard-main {
+  padding-bottom: 3rem;
+}
+
+.appointment-header {
+  margin-bottom: 1.25rem;
+}
+
+.appointment-role-switch {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.appointment-role-switch [data-role-switch].active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.appointment-summary {
+  margin-bottom: 1.4rem;
+}
+
+.appointment-role-view[hidden],
+[data-role-panel][hidden] {
+  display: none !important;
+}
+
+.appointment-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 0.8fr);
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.psychologist-grid {
+  grid-template-columns: minmax(0, 2fr) minmax(300px, 0.75fr);
+}
+
+.appointment-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem;
+}
+
+.compact-heading {
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.compact-heading h2,
+.appointment-card h2 {
+  margin: 0 0 0.25rem;
+  color: var(--text-dark);
+}
+
+.info-sub,
+.modal-description {
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.appointment-form,
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.appointment-form label,
+.form-grid label {
+  display: grid;
+  gap: 0.4rem;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea,
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.85rem;
+  font: inherit;
+  background: #ffffff;
+  color: var(--text-dark);
+}
+
+.appointment-form textarea,
+.form-grid textarea {
+  resize: vertical;
+}
+
+.appointment-form input:focus,
+.appointment-form select:focus,
+.appointment-form textarea:focus,
+.form-grid input:focus,
+.form-grid select:focus,
+.form-grid textarea:focus {
+  outline: 2px solid rgba(61, 155, 122, 0.2);
+  border-color: var(--primary);
+}
+
+.form-full {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.available-slots-list,
+.availability-list,
+.request-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.slot-card {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  background: var(--bg-main);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.slot-card strong,
+.slot-card span {
+  display: block;
+}
+
+.slot-card span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.slot-card:hover,
+.slot-card.active {
+  background: #f0faf6;
+  border-color: var(--primary);
+}
+
+.appointment-tabs {
+  margin-top: 1rem;
+}
+
+.appointment-tab-content {
+  display: none;
+}
+
+.appointment-tab-content.active {
+  display: block;
+  animation: fadeIn 0.25s ease;
+}
+
+.status-badge.pending {
+  background: #fff7df;
+  color: #9a6a00;
+}
+
+.status-badge.completed {
+  background: #e8f5ef;
+  color: var(--primary-dark);
+}
+
+.status-badge.cancelled {
+  background: #fde8e8;
+  color: #ad2f2f;
+}
+
+.appt-card-compact.completed {
+  opacity: 0.92;
+}
+
+.request-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.15rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.request-card h3 {
+  margin: 0.45rem 0 0.25rem;
+}
+
+.request-card p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.request-card.pending {
+  border-left: 4px solid #d99a12;
+}
+
+.request-card.cancelled {
+  border-left: 4px solid #d94b4b;
+}
+
+.request-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.calendar-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.calendar-strip article {
+  border: 1px solid var(--border-light);
+  background: var(--bg-main);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  text-align: center;
+}
+
+.calendar-strip article.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.calendar-strip span,
+.calendar-strip small {
+  display: block;
+}
+
+.calendar-strip strong {
+  display: block;
+  font-size: 1.5rem;
+  margin: 0.15rem 0;
+}
+
+.availability-list article {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  background: var(--bg-main);
+}
+
+.availability-list strong,
+.availability-list span {
+  display: block;
+}
+
+.availability-list span {
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.full-width {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.appointment-modal-card {
+  max-width: 760px;
+}
+
+.cancellation-field {
+  display: none !important;
+}
+
+.appointment-modal-card.cancel-mode .cancellation-field {
+  display: grid !important;
+}
+
+body.appointment-role-paciente .field-psychologist-only,
+body.appointment-role-psicologo .field-patient-only {
+  display: none !important;
+}
+
+@media (max-width: 1024px) {
+  .appointment-grid,
+  .psychologist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .appointment-form,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .appt-card-compact,
+  .request-card {
+    grid-template-columns: 1fr;
+    display: grid;
+    align-items: stretch;
+  }
+
+  .appt-actions,
+  .request-actions {
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  .action-links,
+  .form-actions {
+    justify-content: flex-start;
+  }
+
+  .calendar-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================
+   Correcciones de layout para producción
+   ========================================= */
+
+.appointment-page .dashboard-main {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.appointment-main-card,
+.appointment-side-card,
+.appointment-card,
+.appt-details {
+  min-width: 0;
+}
+
+.appointment-page .appt-card-compact {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1rem;
+  padding: 1.15rem;
+  overflow: hidden;
+}
+
+.appointment-page .appt-header-inline {
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+}
+
+.appointment-page .appt-header-inline .folio,
+.appointment-page .doc-info-compact span,
+.appointment-page .doc-info-compact h3 {
+  overflow-wrap: anywhere;
+}
+
+.appointment-page .appt-actions {
+  min-width: 116px;
+  align-items: stretch;
+}
+
+.appointment-page .appt-actions .btn-sm,
+.appointment-page .request-actions .btn-sm {
+  white-space: nowrap;
+}
+
+/* Modal propio de gestión de citas. No depende de pacientes.css */
+.appointment-page .modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(15, 23, 42, 0.45);
+  overflow-y: auto;
+}
+
+.appointment-page .modal.is-open {
+  display: flex;
+}
+
+.appointment-page .modal-card {
+  position: relative;
+  width: min(760px, 96vw);
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.22);
+  padding: 1.5rem;
+}
+
+.appointment-page .modal-close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: var(--bg-main);
+  color: var(--text-dark);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.appointment-page .modal-close:hover {
+  background: #fde8e8;
+  color: #ad2f2f;
+}
+
+.appointment-page .modal-card h2 {
+  margin: 0 2.5rem 0.35rem 0;
+}
+
+.appointment-page .modal.cancel-mode .cancellation-field {
+  display: grid !important;
+}
+
+@media (max-width: 1180px) {
+  .appointment-grid,
+  .psychologist-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .appointment-page .appt-card-compact {
+    grid-template-columns: 1fr;
+  }
+
+  .appointment-page .appt-actions {
+    min-width: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .appointment-page .modal {
+    padding: 1rem;
+  }
+
+  .appointment-page .modal-card {
+    width: 100%;
+    max-height: calc(100vh - 2rem);
+    padding: 1.25rem;
+  }
+}
+
+/* =========================================
+   Ajustes finales para la vista del paciente
+   - métricas horizontales en escritorio
+   - tarjetas compactas en responsive
+   - tabs visibles como navegación principal
+   ========================================= */
+.appointment-page .appointment-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.appointment-page .appointment-summary .metric-card {
+  min-height: 120px;
+  padding: 1rem 1.2rem;
+}
+
+.appointment-page .patient-tabs {
+  margin: 0 0 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.appointment-page .appointment-card-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.appointment-page .appointment-card-row .appt-card-compact {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: flex-start;
+}
+
+.appointment-page .appointment-card-row .appt-actions {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.appointment-page .request-appointment-grid {
+  margin-top: 1rem;
+}
+
+.appointment-page .appointment-role-switch,
+.appointment-page [data-role-panel="psicologo"] {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .appointment-page .appointment-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .appointment-page .appointment-summary .metric-card {
+    min-height: auto;
+    padding: 0.85rem;
+  }
+
+  .appointment-page .appointment-summary .metric-header strong {
+    font-size: 1.45rem;
+  }
+
+  .appointment-page .appointment-card-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .appointment-page .dashboard-main {
+    padding-inline: 1rem;
+  }
+
+  .appointment-page .appointment-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .appointment-page .appointment-summary .metric-card {
+    padding: 0.8rem 0.9rem;
+    border-radius: var(--radius-md);
+  }
+
+  .appointment-page .appointment-summary .metric-header strong {
+    font-size: 1.25rem;
+  }
+
+  .appointment-page .appointment-summary .metric-card p,
+  .appointment-page .appointment-summary .metric-header span {
+    font-size: 0.8rem;
+  }
+
+  .appointment-page .tabs-container {
+    gap: 0.35rem;
+  }
+
+  .appointment-page .tab-btn {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.92rem;
+    white-space: nowrap;
+  }
+
+  .appointment-page .appointment-card-row .appt-card-compact {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
+  .appointment-page .appointment-card-row .appt-actions,
+  .appointment-page .request-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .appointment-page .action-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================================
+   AJUSTES FINALES — MIS CITAS PACIENTE
+   Mantiene diseño de tabs, botón +, panel de solicitud y selector de psicólogo.
+   Debe permanecer al final del archivo para sobrescribir citas.css/agenda.css.
+   ========================================= */
+    /* Tabs siempre visibles y sin cortes */
+    .appointment-page .patient-tabs {
+      display: flex !important;
+      align-items: center !important;
+      gap: clamp(.5rem, 2vw, 1.4rem) !important;
+      width: 100% !important;
+      min-height: 58px !important;
+      margin: 1rem 0 1.35rem !important;
+      padding: 0 .25rem 0 !important;
+      border-bottom: 0 !important;
+      overflow-x: auto !important;
+      overflow-y: visible !important;
+      white-space: nowrap !important;
+      position: relative !important;
+      background: transparent !important;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .appointment-page .patient-tabs .tab-btn {
+      flex: 0 0 auto !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-height: 50px !important;
+      padding: .75rem 1rem !important;
+      border: 0 !important;
+      border-bottom: 3px solid transparent !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      color: var(--text-muted, #607071) !important;
+      font: inherit !important;
+      font-weight: 800 !important;
+      line-height: 1.2 !important;
+      cursor: pointer !important;
+      overflow: visible !important;
+    }
+
+    .appointment-page .patient-tabs .tab-btn.active {
+      color: var(--primary, #2f8f71) !important;
+      border-bottom-color: var(--primary, #2f8f71) !important;
+    }
+
+    .appointment-page .patient-tabs::before,
+    .appointment-page .patient-tabs::after,
+    .appointment-page .patient-tabs .tab-btn::before,
+    .appointment-page .patient-tabs .tab-btn::after {
+      display: none !important;
+      content: none !important;
+    }
+
+
+    .appointment-page .patient-tabs .new-appointment-toggle {
+      margin-left: auto !important;
+      flex: 0 0 auto !important;
+      width: 42px !important;
+      height: 42px !important;
+      border-radius: 999px !important;
+      border: 1px solid var(--primary, #2f8f71) !important;
+      background: var(--primary, #2f8f71) !important;
+      color: #fff !important;
+      font-size: 1.35rem !important;
+      font-weight: 800 !important;
+      line-height: 1 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      box-shadow: 0 10px 20px rgba(47,143,113,.18);
+    }
+
+    .appointment-page .appointment-tab-content { display: none !important; }
+    .appointment-page .appointment-tab-content.active { display: block !important; }
+
+    /* Panel de nueva cita oculto hasta tocar + */
+    .appointment-page .new-appointment-panel {
+      display: none;
+      margin-bottom: 1.35rem;
+    }
+
+    .appointment-page .new-appointment-panel.is-open {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    /* Tarjetas iguales en todos los tabs */
+    .appointment-page .appointment-card-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .appointment-page .appt-card-compact {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: center;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .appointment-page .appt-date-small {
+      display: grid;
+      place-items: center;
+      align-content: center;
+      width: 96px;
+      min-height: 104px;
+      border-radius: 14px;
+      background: var(--bg-main, #f6f9f8);
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .appointment-page .appt-date-small .month {
+      color: var(--primary, #2f8f71);
+      font-size: .82rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .appointment-page .appt-date-small .day {
+      display: block;
+      margin: .15rem 0;
+      font-family: var(--font-heading, Georgia, serif);
+      font-size: 2.15rem;
+      line-height: 1;
+      color: var(--text-dark, #10201c);
+    }
+
+    .appointment-page .appt-date-small .year {
+      color: #8190a5;
+      font-size: .92rem;
+    }
+
+    .appointment-page .appt-details,
+    .appointment-page .doc-info-compact { min-width: 0; }
+
+    .appointment-page .appt-header-inline {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-bottom: .55rem;
+    }
+
+    .appointment-page .doc-info-compact h3 {
+      margin: 0 0 .3rem;
+      color: var(--text-dark, #10201c);
+    }
+
+    .appointment-page .doc-info-compact span,
+    .appointment-page .request-meta {
+      color: #70819a;
+    }
+
+    .appointment-page .request-row .appt-actions {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: .55rem;
+    }
+
+    .appointment-page .cancelled-row .appt-actions,
+    .appointment-page .completed .appt-actions {
+      display: none;
+    }
+
+
+
+    /* Solicitudes: registro compacto de una sola fila */
+    .appointment-page [data-appointment-content="patient-requests"] .appointment-card-row {
+      grid-template-columns: 1fr !important;
+    }
+
+    .appointment-page [data-appointment-content="patient-requests"] .appt-card-compact.request-row {
+      grid-template-columns: 96px minmax(0, 1fr) auto !important;
+      gap: 1.25rem !important;
+      align-items: center !important;
+      padding: 1rem 1.2rem !important;
+    }
+
+    .appointment-page [data-appointment-content="patient-requests"] .appt-date-small {
+      width: 96px !important;
+      min-height: 104px !important;
+    }
+
+    .appointment-page .request-row .doc-info-compact {
+      display: block !important;
+      min-width: 0 !important;
+    }
+
+    .appointment-page .request-row .doc-info-compact h3 {
+      margin: 0 0 .35rem !important;
+      line-height: 1.12 !important;
+      max-width: none !important;
+      overflow-wrap: normal !important;
+      word-break: normal !important;
+      hyphens: none !important;
+    }
+
+    .appointment-page .request-row .request-meta {
+      margin: .28rem 0 0 !important;
+      max-width: 620px !important;
+      font-size: .95rem !important;
+      line-height: 1.35 !important;
+    }
+
+    .appointment-page .request-row .appt-actions {
+      min-width: 190px !important;
+      padding-left: 1rem !important;
+      border-left: 1px solid var(--border-light, #dde7e2) !important;
+    }
+
+    /* Selector visual de psicólogo */
+    .appointment-page .psychologist-picker {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .75rem;
+      margin-top: .5rem;
+    }
+
+    .appointment-page .psychologist-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .appointment-page .psychologist-option-card {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: .7rem;
+      align-items: center;
+      min-height: 82px;
+      padding: .85rem;
+      border: 1px solid var(--border-light, #dde7e2);
+      border-radius: 16px;
+      background: #fff;
+      cursor: pointer;
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .appointment-page .psychologist-option input:checked + .psychologist-option-card {
+      border-color: var(--primary, #2f8f71);
+      background: #eef8f4;
+      box-shadow: 0 10px 22px rgba(47,143,113,.13);
+    }
+
+    .appointment-page .psychologist-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--primary, #2f8f71);
+      font-weight: 900;
+    }
+
+    .appointment-page .psychologist-name {
+      display: block;
+      color: var(--text-dark, #10201c);
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .appointment-page .psychologist-specialty {
+      display: block;
+      margin-top: .2rem;
+      color: #70819a;
+      font-size: .86rem;
+      line-height: 1.25;
+    }
+
+    .appointment-page .psychologist-field { grid-column: 1 / -1; }
+
+    @media (max-width: 1050px) {
+      .appointment-page .new-appointment-panel { grid-template-columns: 1fr; }
+      .appointment-page .appointment-card-row { grid-template-columns: 1fr; }
+      .appointment-page .psychologist-picker { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .appointment-page .dashboard-main { padding-inline: 1rem; }
+      .appointment-page .patient-tabs {
+        min-height: 54px !important;
+        gap: .25rem !important;
+        padding-right: .25rem !important;
+      }
+      .appointment-page .patient-tabs .tab-btn {
+        min-height: 44px !important;
+        padding: .62rem .72rem !important;
+        font-size: .9rem !important;
+      }
+      .appointment-page .patient-tabs .new-appointment-toggle {
+        width: 38px !important;
+        height: 38px !important;
+        margin-left: .25rem !important;
+      }
+      .appointment-page .appt-card-compact,
+      .appointment-page .request-row,
+      .appointment-page .cancelled-row {
+        grid-template-columns: 82px minmax(0, 1fr) !important;
+        gap: .75rem !important;
+        padding: .85rem !important;
+      }
+      .appointment-page .appt-date-small {
+        width: 82px !important;
+        min-height: 90px !important;
+      }
+      .appointment-page .appt-date-small .day { font-size: 1.65rem; }
+      .appointment-page .appt-details { grid-column: 2; }
+
+      .appointment-page [data-appointment-content="patient-requests"] .appt-card-compact.request-row {
+        grid-template-columns: 76px minmax(0, 1fr) !important;
+        gap: .7rem !important;
+        align-items: start !important;
+        padding: .85rem !important;
+      }
+      .appointment-page [data-appointment-content="patient-requests"] .appt-date-small {
+        width: 76px !important;
+        min-height: 84px !important;
+      }
+      .appointment-page .request-row .appt-actions {
+        grid-column: 2 !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        border-left: 0 !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+      }
+      .appointment-page .request-row .btn-sm {
+        width: auto !important;
+        min-height: 36px !important;
+        padding: .55rem .8rem !important;
+      }
+      .appointment-page .request-row .request-meta {
+        font-size: .86rem !important;
+      }
+
+      .appointment-page .appt-actions,
+      .appointment-page .request-row .appt-actions {
+        grid-column: 1 / -1;
+        width: 100%;
+        align-items: stretch;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        padding-top: .25rem;
+      }
+      .appointment-page [data-appointment-content="patient-requests"] .request-row .appt-actions {
+        grid-column: 2 !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+      }
+    }
+
+
+    @media (max-width: 420px) {
+      .appointment-page .patient-tabs .tab-btn { padding-inline: .55rem !important; }
+      .appointment-page [data-appointment-content="patient-requests"] .appt-card-compact.request-row {
+        grid-template-columns: 68px minmax(0, 1fr) !important;
+      }
+      .appointment-page [data-appointment-content="patient-requests"] .appt-date-small {
+        width: 68px !important;
+        min-height: 78px !important;
+      }
+      .appointment-page .request-row .appt-header-inline { gap: .45rem !important; }
+      .appointment-page .request-row .doc-info-compact h3 { font-size: 1rem !important; }
+      .appointment-page .request-row .doc-info-compact span,
+      .appointment-page .request-row .request-meta { font-size: .8rem !important; }
+    }
+
+
+/* Refuerzo para que el botón + y el panel no pierdan estilos al separar archivos */
+.appointment-page .patient-tabs > .new-appointment-toggle,
+.appointment-page button#toggle-new-appointment.new-appointment-toggle {
+  flex: 0 0 auto !important;
+  width: 42px !important;
+  min-width: 42px !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  margin-left: auto !important;
+  padding: 0 !important;
+  border: 1px solid var(--primary, #3d9b7a) !important;
+  border-radius: 999px !important;
+  background: var(--primary, #3d9b7a) !important;
+  color: #fff !important;
+  font-size: 1.35rem !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 10px 20px rgba(47,143,113,.18) !important;
+  text-decoration: none !important;
+  appearance: none !important;
+}
+
+.appointment-page .patient-tabs > .new-appointment-toggle span,
+.appointment-page button#toggle-new-appointment.new-appointment-toggle span {
+  display: block !important;
+  line-height: 1 !important;
+  transform: translateY(-1px);
+}
+
+.appointment-page .new-appointment-panel.is-open,
+.appointment-page #new-appointment-panel.is-open,
+.appointment-page #new-appointment-panel:not([hidden]) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 320px !important;
+  gap: 1rem !important;
+  align-items: start !important;
+  margin-bottom: 1.35rem !important;
+}
+
+.appointment-page #new-appointment-panel[hidden]:not(.is-open) {
+  display: none !important;
+}
+
+.appointment-page .new-appointment-panel .appointment-card,
+.appointment-page .new-appointment-panel .appointment-main-card,
+.appointment-page .new-appointment-panel .appointment-side-card {
+  background: #fff !important;
+  border: 1px solid var(--border-light, #edf2f7) !important;
+  border-radius: var(--radius-lg, 20px) !important;
+  box-shadow: var(--shadow-sm, 0 4px 12px rgba(28,46,40,.08)) !important;
+  padding: 1.25rem !important;
+}
+
+.appointment-page .psychologist-field .field-title {
+  display: block !important;
+  margin-bottom: .5rem !important;
+  color: var(--text-dark, #1c2e28) !important;
+  font-weight: 800 !important;
+}
+
+@media (max-width: 1050px) {
+  .appointment-page .new-appointment-panel.is-open,
+  .appointment-page #new-appointment-panel.is-open,
+  .appointment-page #new-appointment-panel:not([hidden]) {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .appointment-page .patient-tabs > .new-appointment-toggle,
+  .appointment-page button#toggle-new-appointment.new-appointment-toggle {
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    margin-left: .25rem !important;
+  }
+}
+
+/* =========================================
+   Selector de psicólogos organizado
+   Pensado para listas largas de especialistas activos
+   ========================================= */
+.appointment-page .psychologist-field {
+  grid-column: 1 / -1;
+}
+
+.appointment-page .psychologist-field-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.appointment-page .psychologist-field .field-title {
+  display: block !important;
+  margin-bottom: 0.2rem !important;
+  color: var(--text-dark, #1c2e28) !important;
+  font-weight: 800 !important;
+}
+
+.appointment-page .field-helper {
+  margin: 0;
+  color: #70819a;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.appointment-page .specialist-count {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: #eef8f4;
+  color: var(--primary-dark, #2d7a5e);
+  font-size: 0.82rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.appointment-page .specialist-search {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.appointment-page .specialist-search span {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #70819a;
+  font-weight: 800;
+  pointer-events: none;
+}
+
+.appointment-page .specialist-search input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.75rem 1rem 0.75rem 2.35rem;
+  border: 1px solid var(--border-light, #dde7e2);
+  border-radius: var(--radius-md, 14px);
+  background: #fff;
+  color: var(--text-dark, #10201c);
+  font: inherit;
+}
+
+.appointment-page .specialist-search input:focus {
+  outline: 2px solid rgba(61, 155, 122, 0.18);
+  border-color: var(--primary, #3d9b7a);
+}
+
+.appointment-page .selected-specialist-summary {
+  margin-bottom: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-md, 14px);
+  background: #f6fbf8;
+  border: 1px solid rgba(61, 155, 122, 0.16);
+  color: #607071;
+  font-size: 0.9rem;
+}
+
+.appointment-page .selected-specialist-summary strong {
+  color: var(--text-dark, #10201c);
+}
+
+.appointment-page .psychologist-picker {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(260px, 1fr)) !important;
+  gap: 0.65rem !important;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.15rem 0.35rem 0.15rem 0;
+  margin-top: 0 !important;
+  scrollbar-width: thin;
+}
+
+.appointment-page .psychologist-picker::-webkit-scrollbar {
+  width: 8px;
+}
+
+.appointment-page .psychologist-picker::-webkit-scrollbar-thumb {
+  background: rgba(61, 155, 122, 0.28);
+  border-radius: 999px;
+}
+
+.appointment-page .psychologist-option[hidden] {
+  display: none !important;
+}
+
+.appointment-page .psychologist-option-card {
+  min-height: 74px !important;
+  padding: 0.75rem !important;
+}
+
+.appointment-page .psychologist-specialty {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.appointment-page .empty-specialist-message {
+  margin-top: 0.65rem;
+  padding: 0.85rem 1rem;
+  border: 1px dashed rgba(61, 155, 122, 0.28);
+  border-radius: var(--radius-md, 14px);
+  color: #70819a;
+  background: #f8fafc;
+}
+
+@media (max-width: 900px) {
+  .appointment-page .psychologist-picker {
+    grid-template-columns: 1fr !important;
+    max-height: 340px;
+  }
+}
+
+@media (max-width: 640px) {
+  .appointment-page .psychologist-field-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .appointment-page .specialist-count {
+    align-self: flex-start;
+  }
+
+  .appointment-page .psychologist-picker {
+    max-height: 320px;
+    padding-right: 0.2rem;
+  }
+
+  .appointment-page .psychologist-option-card {
+    grid-template-columns: 38px minmax(0, 1fr) !important;
+    min-height: 68px !important;
+  }
+
+  .appointment-page .psychologist-avatar {
+    width: 38px !important;
+    height: 38px !important;
+  }
+}
+
+/* =========================================
+   Selector de psicólogos como desplegable
+   Evita que una lista larga empuje el formulario
+   ========================================= */
+.appointment-page .new-appointment-panel,
+.appointment-page .appointment-main-card,
+.appointment-page .appointment-form,
+.appointment-page .psychologist-field {
+  overflow: visible !important;
+}
+
+.appointment-page .specialist-select {
+  position: relative;
+  width: 100%;
+  z-index: 20;
+}
+
+.appointment-page .specialist-select.is-open {
+  z-index: 80;
+}
+
+.appointment-page .specialist-selected-card {
+  width: 100%;
+  min-height: 74px;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .85rem;
+  padding: .85rem 1rem;
+  border: 1px solid var(--border-light, #dde7e2);
+  border-radius: var(--radius-md, 14px);
+  background: #fff;
+  color: var(--text-dark, #10201c);
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(28, 46, 40, 0.04);
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.appointment-page .specialist-selected-card:hover,
+.appointment-page .specialist-selected-card:focus-visible,
+.appointment-page .specialist-select.is-open .specialist-selected-card {
+  border-color: var(--primary, #3d9b7a);
+  background: #f6fbf8;
+  box-shadow: 0 10px 24px rgba(61, 155, 122, 0.12);
+  outline: none;
+}
+
+.appointment-page .selected-specialist-copy,
+.appointment-page .selected-specialist-summary {
+  display: grid !important;
+  gap: .1rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #70819a !important;
+  min-width: 0 !important;
+  font-size: .95rem !important;
+}
+
+.appointment-page .selected-specialist-copy .selected-label {
+  color: #70819a;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+.appointment-page .selected-specialist-copy strong {
+  color: var(--text-dark, #10201c) !important;
+  font-size: 1rem;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.appointment-page .selected-specialist-copy small {
+  color: #70819a;
+  font-weight: 700;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.appointment-page .specialist-chevron {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: var(--primary-dark, #2d7a5e);
+  background: #eef8f4;
+  font-size: 1.1rem;
+  font-weight: 900;
+  transition: transform .2s ease;
+}
+
+.appointment-page .specialist-select.is-open .specialist-chevron {
+  transform: rotate(180deg);
+}
+
+.appointment-page .specialist-dropdown {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + .55rem);
+  display: grid;
+  gap: .75rem;
+  padding: .85rem;
+  border: 1px solid var(--border-light, #dde7e2);
+  border-radius: var(--radius-lg, 20px);
+  background: #fff;
+  box-shadow: 0 24px 60px rgba(28, 46, 40, .16);
+}
+
+.appointment-page .specialist-dropdown[hidden] {
+  display: none !important;
+}
+
+.appointment-page .specialist-dropdown .specialist-search {
+  margin-bottom: 0 !important;
+}
+
+.appointment-page .specialist-dropdown .psychologist-picker {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(240px, 1fr)) !important;
+  gap: .65rem !important;
+  max-height: 260px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: .15rem .35rem .15rem 0 !important;
+  margin: 0 !important;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(61,155,122,.35) transparent;
+}
+
+.appointment-page .specialist-dropdown .psychologist-option-card {
+  min-height: 68px !important;
+  padding: .7rem !important;
+}
+
+.appointment-page .specialist-dropdown .psychologist-option input:checked + .psychologist-option-card {
+  border-color: var(--primary, #3d9b7a) !important;
+  background: #eef8f4 !important;
+  box-shadow: 0 8px 18px rgba(61,155,122,.12) !important;
+}
+
+@media (max-width: 900px) {
+  .appointment-page .specialist-dropdown .psychologist-picker {
+    grid-template-columns: 1fr !important;
+    max-height: 300px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .appointment-page .specialist-selected-card {
+    grid-template-columns: 40px minmax(0, 1fr) 28px;
+    min-height: 68px;
+    padding: .75rem;
+  }
+
+  .appointment-page .specialist-dropdown {
+    padding: .7rem;
+    border-radius: var(--radius-md, 14px);
+  }
+
+  .appointment-page .selected-specialist-copy strong {
+    font-size: .94rem;
+  }
+
+  .appointment-page .selected-specialist-copy small {
+    font-size: .82rem;
+  }
+}
+
+/* =========================================
+   DISEÑO FINAL DE APPT-CARDS EN TABS
+   - Mismo look compacto del historial
+   - Layout con flex
+   - Se acomodan de 2 en 2 en escritorio
+   - Una por fila en tablet/teléfono
+   ========================================= */
+.appointment-page .appointment-tab-content .appointments-list.appointment-card-row,
+.appointment-page .appointment-tab-content .appointment-card-row,
+.appointment-page [data-appointment-content="patient-requests"] .appointment-card-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+  align-items: stretch !important;
+  flex-direction: row !important;
+}
+
+.appointment-page .appointment-tab-content .appointment-card-row > .appt-card-compact,
+.appointment-page [data-appointment-content="patient-requests"] .appt-card-compact.request-row {
+  flex: 1 1 calc(50% - 0.5rem) !important;
+  max-width: calc(50% - 0.5rem) !important;
+  min-width: 300px !important;
+  width: auto !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  padding: 1.2rem !important;
+  border: 1px solid var(--border-light, #edf2f7) !important;
+  border-radius: var(--radius-lg, 20px) !important;
+  background: #ffffff !important;
+  box-shadow: 0 8px 24px rgba(28, 46, 40, 0.06) !important;
+  overflow: hidden !important;
+}
+
+.appointment-page .appointment-tab-content .appointment-card-row > .appt-card-compact:hover {
+  border-color: rgba(47, 143, 113, 0.35) !important;
+  box-shadow: 0 12px 28px rgba(47, 143, 113, 0.1) !important;
+}
+
+.appointment-page .appointment-tab-content .appt-date-small {
+  flex: 0 0 96px !important;
+  width: 96px !important;
+  min-width: 96px !important;
+  min-height: 104px !important;
+  display: grid !important;
+  place-items: center !important;
+  align-content: center !important;
+  padding: 0.85rem !important;
+  border-radius: 16px !important;
+  background: var(--bg-main, #f6f9f8) !important;
+  text-align: center !important;
+}
+
+.appointment-page .appointment-tab-content .appt-date-small .month {
+  color: var(--primary, #2f8f71) !important;
+  font-size: 0.82rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.1 !important;
+}
+
+.appointment-page .appointment-tab-content .appt-date-small .day {
+  display: block !important;
+  margin: 0.18rem 0 !important;
+  color: var(--text-dark, #10201c) !important;
+  font-family: var(--font-heading, Georgia, serif) !important;
+  font-size: 2.15rem !important;
+  line-height: 1 !important;
+}
+
+.appointment-page .appointment-tab-content .appt-date-small .year {
+  color: #8190a5 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.1 !important;
+}
+
+.appointment-page .appointment-tab-content .appt-details {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 0.35rem !important;
+}
+
+.appointment-page .appointment-tab-content .appt-header-inline {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 0.55rem 0.85rem !important;
+  margin: 0 0 0.45rem !important;
+}
+
+.appointment-page .appointment-tab-content .appt-header-inline .time {
+  color: var(--text-dark, #10201c) !important;
+  font-weight: 900 !important;
+  white-space: nowrap !important;
+}
+
+.appointment-page .appointment-tab-content .appt-header-inline .folio {
+  color: #6f7d8f !important;
+  font-family: inherit !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.04em !important;
+  opacity: 0.9 !important;
+  white-space: nowrap !important;
+}
+
+.appointment-page .appointment-tab-content .doc-info-compact,
+.appointment-page .appointment-tab-content .request-row .doc-info-compact {
+  display: block !important;
+  min-width: 0 !important;
+}
+
+.appointment-page .appointment-tab-content .doc-info-compact h3,
+.appointment-page .appointment-tab-content .request-row .doc-info-compact h3 {
+  margin: 0 0 0.32rem !important;
+  color: var(--text-dark, #10201c) !important;
+  font-family: var(--font-heading, Georgia, serif) !important;
+  font-size: 1.18rem !important;
+  line-height: 1.15 !important;
+  overflow-wrap: anywhere !important;
+}
+
+.appointment-page .appointment-tab-content .doc-info-compact span,
+.appointment-page .appointment-tab-content .request-row .doc-info-compact span,
+.appointment-page .appointment-tab-content .request-meta {
+  color: #70819a !important;
+  font-size: 0.92rem !important;
+  line-height: 1.35 !important;
+  opacity: 1 !important;
+}
+
+.appointment-page .appointment-tab-content .request-meta {
+  margin: 0.32rem 0 0 !important;
+  max-width: none !important;
+}
+
+.appointment-page .appointment-tab-content .appt-actions,
+.appointment-page .appointment-tab-content .request-row .appt-actions,
+.appointment-page [data-appointment-content="patient-requests"] .request-row .appt-actions {
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.75rem !important;
+  padding-top: 0.85rem !important;
+  padding-left: 0 !important;
+  border-top: 1px solid var(--border-light, #dde7e2) !important;
+  border-left: 0 !important;
+}
+
+.appointment-page .appointment-tab-content .appt-actions .btn-sm,
+.appointment-page .appointment-tab-content .request-row .btn-sm {
+  width: auto !important;
+  min-height: 38px !important;
+  padding: 0.58rem 0.95rem !important;
+  white-space: nowrap !important;
+}
+
+.appointment-page .appointment-tab-content .action-links {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0.95rem !important;
+  margin-left: auto !important;
+  flex-wrap: wrap !important;
+}
+
+.appointment-page .appointment-tab-content .cancelled-row .appt-actions,
+.appointment-page .appointment-tab-content .completed .appt-actions {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .appointment-page .appointment-tab-content .appointment-card-row > .appt-card-compact,
+  .appointment-page [data-appointment-content="patient-requests"] .appt-card-compact.request-row {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .appointment-page .appointment-tab-content .appointment-card-row,
+  .appointment-page [data-appointment-content="patient-requests"] .appointment-card-row {
+    gap: 0.85rem !important;
+  }
+
+  .appointment-page .appointment-tab-content .appointment-card-row > .appt-card-compact,
+  .appointment-page [data-appointment-content="patient-requests"] .appt-card-compact.request-row {
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    padding: 0.9rem !important;
+  }
+
+  .appointment-page .appointment-tab-content .appt-date-small,
+  .appointment-page [data-appointment-content="patient-requests"] .appt-date-small {
+    flex-basis: 78px !important;
+    width: 78px !important;
+    min-width: 78px !important;
+    min-height: 86px !important;
+    padding: 0.62rem !important;
+    border-radius: 14px !important;
+  }
+
+  .appointment-page .appointment-tab-content .appt-date-small .month {
+    font-size: 0.72rem !important;
+  }
+
+  .appointment-page .appointment-tab-content .appt-date-small .day {
+    font-size: 1.68rem !important;
+  }
+
+  .appointment-page .appointment-tab-content .appt-date-small .year {
+    font-size: 0.82rem !important;
+  }
+
+  .appointment-page .appointment-tab-content .appt-details {
+    flex: 1 1 calc(100% - 96px) !important;
+  }
+
+  .appointment-page .appointment-tab-content .appt-header-inline {
+    gap: 0.42rem 0.55rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .appointment-page .appointment-tab-content .status-badge {
+    padding: 0.32rem 0.62rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  .appointment-page .appointment-tab-content .appt-header-inline .time,
+  .appointment-page .appointment-tab-content .appt-header-inline .folio {
+    font-size: 0.8rem !important;
+  }
+
+  .appointment-page .appointment-tab-content .doc-info-compact h3,
+  .appointment-page .appointment-tab-content .request-row .doc-info-compact h3 {
+    font-size: 1rem !important;
+  }
+
+  .appointment-page .appointment-tab-content .doc-info-compact span,
+  .appointment-page .appointment-tab-content .request-row .doc-info-compact span,
+  .appointment-page .appointment-tab-content .request-meta {
+    font-size: 0.82rem !important;
+  }
+
+  .appointment-page .appointment-tab-content .appt-actions,
+  .appointment-page .appointment-tab-content .request-row .appt-actions,
+  .appointment-page [data-appointment-content="patient-requests"] .request-row .appt-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 0.6rem !important;
+    padding-top: 0.75rem !important;
+  }
+
+  .appointment-page .appointment-tab-content .appt-actions .btn-sm,
+  .appointment-page .appointment-tab-content .request-row .btn-sm {
+    width: 100% !important;
+    white-space: normal !important;
+  }
+
+  .appointment-page .appointment-tab-content .action-links {
+    width: 100% !important;
+    justify-content: space-between !important;
+    margin-left: 0 !important;
+    gap: 0.75rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .appointment-page .appointment-tab-content .appointment-card-row > .appt-card-compact,
+  .appointment-page [data-appointment-content="patient-requests"] .appt-card-compact.request-row {
+    gap: 0.65rem !important;
+    padding: 0.8rem !important;
+  }
+
+  .appointment-page .appointment-tab-content .appt-date-small,
+  .appointment-page [data-appointment-content="patient-requests"] .appt-date-small {
+    flex-basis: 68px !important;
+    width: 68px !important;
+    min-width: 68px !important;
+    min-height: 78px !important;
+  }
+
+  .appointment-page .appointment-tab-content .appt-details {
+    flex-basis: calc(100% - 84px) !important;
+  }
+}

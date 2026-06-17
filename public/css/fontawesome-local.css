@@ -1,0 +1,4 @@
+/* Fallback local para íconos usados por las vistas IRIS.
+   Evita depender de CDN externos y mantiene las rutas CSS dentro de public/. */
+.fa,.fas,.far,.fab{display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1;min-width:1em;text-align:center}
+.fa-calendar-check::before{content:"📅"}.fa-calendar-plus::before{content:"📅"}.fa-chart-pie::before{content:"📊"}.fa-check-circle::before,.fa-circle-check::before{content:"✅"}.fa-eye::before{content:"👁"}.fa-file-export::before{content:"📤"}.fa-file-medical::before{content:"📄"}.fa-inbox::before{content:"📥"}.fa-list-check::before{content:"☑"}.fa-magnifying-glass::before,.fa-search::before{content:"🔎"}.fa-note-sticky::before{content:"📝"}.fa-notes-medical::before{content:"🗒"}.fa-plus::before{content:"+"}.fa-save::before{content:"💾"}.fa-triangle-exclamation::before{content:"⚠"}.fa-user-friends::before,.fa-users::before{content:"👥"}.fa-user-plus::before{content:"➕"}

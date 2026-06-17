@@ -1,0 +1,212 @@
+/* =========================================
+   HEADER.CSS - Navegación Superior
+   IRIS
+   ========================================= */
+
+/* ─── Header Principal ─── */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0 5%;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Transición suave para scroll-hide y efectos visuales */
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+}
+
+/* Estado: header visible con fondo al hacer scroll */
+.main-header.scrolled {
+    background: rgba(248, 250, 252, 0.94);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-xs);
+}
+
+/* Estado: header oculto (scroll hacia abajo) */
+.main-header.header-hidden {
+    transform: translateY(-100%);
+}
+
+/* El menú móvil también se esconde cuando el header lo hace */
+.mobile-menu {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.25s ease;
+}
+
+/* ─── Nav Desktop ─── */
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.desktop-nav a {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--text-body);
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.desktop-nav a:hover {
+    color: var(--text-dark);
+    background: var(--bg-surface);
+}
+
+/* ─── Auth Buttons ─── */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.btn-nav-login {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-body);
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.btn-nav-login:hover {
+    color: var(--text-dark);
+    background: var(--bg-surface);
+}
+
+.btn-nav-register {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    background: var(--primary);
+    color: #fff;
+    padding: 9px 18px;
+    border-radius: var(--radius-md);
+    transition: var(--transition-slow);
+    text-decoration: none;
+    border: none;
+}
+
+.btn-nav-register:hover {
+    background: var(--primary-dark);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(61, 155, 122, 0.3);
+}
+
+/* ─── Hamburger (mobile) ─── */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 4px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.hamburger:hover { background: var(--bg-surface); }
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    background: var(--text-dark);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── Mobile Menu ─── */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--bg-main);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-6) 5%;
+    z-index: 999;
+    box-shadow: var(--shadow-md);
+    animation: fadeIn 0.2s ease;
+}
+
+.mobile-menu.open { display: block; }
+
+.mobile-menu nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+}
+
+.mobile-menu nav a {
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--text-body);
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-dark);
+    text-decoration: none;
+}
+
+.mobile-menu .mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.mobile-actions .btn-primary,
+.mobile-actions .btn-outline {
+    width: 100%;
+    justify-content: center;
+}
+
+/* ─── Header Simple (páginas internas) ─── */
+.simple-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-5) 5%;
+    background: var(--bg-surface-2);
+    border-bottom: 1px solid var(--border);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.back-link:hover { color: var(--text-dark); }
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+    .desktop-nav,
+    .header-actions .btn-nav-login,
+    .header-actions .btn-nav-register { display: none; }
+    .hamburger { display: flex; }
+}

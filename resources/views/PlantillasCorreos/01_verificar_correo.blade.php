@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Verifica tu correo electrónico</title>
+  <style>
+    @media screen and (max-width: 620px) {
+      .container { width: 100% !important; }
+      .content { padding: 32px 20px !important; }
+      .title { font-size: 26px !important; line-height: 34px !important; }
+      .button { display: block !important; width: 100% !important; box-sizing: border-box !important; }
+      .pill { font-size: 11px !important; }
+    }
+  </style>
+</head>
+<body style="margin:0; padding:0; background:linear-gradient(180deg,#eef8f3 0%,#e7f4ee 100%); font-family:Arial, Helvetica, sans-serif; color:#1f2f27;">
+  <div style="display:none; max-height:0; overflow:hidden; opacity:0; color:transparent;">
+    Confirma tu correo para completar el registro de tu cuenta IRIS.
+  </div>
+
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:linear-gradient(180deg,#eef8f3 0%,#e7f4ee 100%); margin:0; padding:36px 12px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" class="container" width="600" cellspacing="0" cellpadding="0" border="0" style="width:600px; max-width:600px; background:#ffffff; border-radius:22px; overflow:hidden; border:1px solid #d8ece0; box-shadow:0 18px 40px rgba(30,90,69,0.12);">
+          <tr>
+            <td class="content" style="padding:40px 42px 36px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td align="center" style="padding-bottom:14px;">
+                    <img src="{{ asset('PlantillasCorreos/assets/Logo_icono.png') }}" width="72" alt="IRIS" style="display:block; width:72px; height:auto; border:0;">
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-bottom:16px;">
+                    <span class="pill" style="display:inline-block; background:#eef8f3; color:#1e5a45; font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:7px 12px; border-radius:999px;">Verificación de cuenta</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <h1 class="title" style="margin:0; font-size:30px; line-height:38px; color:#1e5a45; font-weight:800; letter-spacing:-0.4px;">Verifica tu correo electrónico</h1>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top:18px; font-size:16px; line-height:26px; color:#375247;">
+                    <p style="margin:0 0 10px;">Hola <strong>{{ $nombre ?? 'Usuario' }}</strong>,</p>
+                    <p style="margin:0;">Gracias por registrarte en <strong>IRIS</strong>. Para continuar con tu cuenta y proteger tu acceso, confirma que esta dirección de correo es realmente tuya.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top:18px;">
+                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f7fbf9; border:1px solid #dcefe3; border-radius:16px;">
+                      <tr>
+                        <td style="padding:16px 18px; font-size:14px; line-height:22px; color:#446257;">
+                          <strong style="color:#1e5a45;">Correo para verificar:</strong><br>
+                          <span style="word-break:break-all;">{{ $email ?? ($nombre ?? 'tu correo') }}</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding:28px 0 18px;">
+                    <a class="button" href="{{ $url_verificacion ?? '#' }}" target="_blank" style="display:inline-block; background:linear-gradient(90deg,#2c7a5e 0%,#3f9d7d 100%); color:#ffffff; text-decoration:none; font-size:16px; font-weight:800; padding:15px 32px; border-radius:999px; box-shadow:0 10px 22px rgba(44,122,94,0.28);">Confirmar mi correo</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background:#f7fbf9; border:1px solid #dcefe3; border-radius:16px; padding:16px 18px;">
+                    <p style="margin:0; font-size:13px; line-height:21px; color:#4f665c;">Si el botón no funciona, copia y pega este enlace en tu navegador:</p>
+                    <p style="margin:8px 0 0; font-size:12px; line-height:20px; word-break:break-all;"><a href="{{ $url_verificacion ?? '#' }}" style="color:#1e5a45; text-decoration:underline;">{{ $url_verificacion ?? '#' }}</a></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top:18px; font-size:14px; line-height:22px; color:#60786e;">
+                    <p style="margin:0;">Por seguridad, este enlace vence en <strong>{{ $tiempo_expiracion ?? '24 horas' }}</strong>. Si no realizaste esta solicitud, puedes ignorar este mensaje.</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:22px 34px; background:#1e5a45; color:#dcefe6; text-align:center; font-size:12px; line-height:19px;">
+              <p style="margin:0 0 8px; font-weight:800; color:#ffffff;">IRIS</p>
+              <p style="margin:0;">Este correo fue enviado automáticamente. Por favor, no respondas a este mensaje.</p>
+              <p style="margin:8px 0 0; color:#bfe0cf;">© {{ $anio ?? date('Y') }} IRIS. Todos los derechos reservados.</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

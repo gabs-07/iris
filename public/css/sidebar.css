@@ -1,0 +1,153 @@
+/* =========================================
+   SIDEBAR.CSS - Menú lateral reutilizable
+   Usado por pacientes, psicólogos y comunidad
+   ========================================= */
+
+.sidebar {
+    width: var(--sidebar-width, 260px);
+    min-width: 260px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    align-self: flex-start;
+    overflow-y: auto;
+    background-color: var(--bg-surface-2);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.75rem;
+    gap: 1.75rem;
+    box-shadow: 2px 0 20px rgba(28, 46, 40, 0.05);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.sidebar-logo .logo-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 14px;
+    font-weight: 700;
+}
+
+.sidebar-nav,
+.sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.sidebar-nav { flex: 1; }
+.sidebar-footer { border-top: 1px solid var(--border); padding-top: 1rem; }
+
+.sidebar-nav a,
+.sidebar-footer a {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.95rem 1rem;
+    border-radius: var(--radius-md);
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.sidebar-nav a:hover,
+.sidebar-footer a:hover {
+    background-color: rgba(61, 155, 122, 0.12);
+    color: var(--primary-dark);
+}
+
+.sidebar-nav a.active,
+.sidebar-footer a.active {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.nav-icon svg { width: 20px; height: 20px; }
+.sidebar-mobile-header, .hamburger-btn { display: none; }
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        height: 70px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 1rem 1.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+        overflow: hidden;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-mobile-header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .desktop-only { display: none !important; }
+
+    .hamburger-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 2001;
+    }
+
+    .hamburger-btn span {
+        width: 25px;
+        height: 3px;
+        background: var(--text-dark);
+        transition: var(--transition);
+    }
+
+    .sidebar-nav, .sidebar-footer { display: none; width: 100%; }
+
+    body.menu-open .sidebar {
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+
+    body.menu-open .sidebar-nav,
+    body.menu-open .sidebar-footer {
+        display: flex;
+        margin-top: 1.5rem;
+    }
+
+    body.menu-open .hamburger-btn span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    body.menu-open .hamburger-btn span:nth-child(2) { opacity: 0; }
+    body.menu-open .hamburger-btn span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .dashboard-main { padding-top: 85px !important; }
+}

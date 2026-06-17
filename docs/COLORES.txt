@@ -1,0 +1,15 @@
+
+Rol	Variable CSS	Valor HEX
+Primario principal	--primary	#2c7a5e (verde oscuro)
+Primario claro	--primary-light	#e0f2e9 (verde muy claro, fondo)
+Primario oscuro	--primary-dark	#1e5a45 (verde más oscuro para bordes)
+Fondo general	--bg-main	#f8fafc (gris muy claro, casi blanco)
+Fondo tarjetas	--bg-surface	#ffffff (blanco)
+Texto principal	--text-dark	#1e2a32 (gris azulado oscuro)
+Texto cuerpo	--text-body	#334e68 (gris azulado medio)
+Texto secundario	--text-muted	#62748c (gris azulado pálido)
+Bordes	--border	#e2e8f0 (gris muy claro)
+Bordes suaves	--border-light	#edf2f7 (gris aún más claro)
+Sombras	--shadow-sm	0 4px 12px rgba(0,0,0,0.05)
+Sombras medias	--shadow-md	0 8px 24px rgba(0,0,0,0.08)
+También se usan colores derivados como #fefefe en hover y rgba(0,0,0,0.1) en sombras.

@@ -1,0 +1,2 @@
+<!DOCTYPE html><html lang="es"><head>
+    <meta name="csrf-token" content="{{ csrf_token() }}"><meta name="user-role" content="{{ auth()->user()->rol }}"><meta charset="UTF-8"><meta http-equiv="refresh" content="0; url={{ url('/psicologo/agenda-psicologo') }}"><title>Agenda profesional</title></head><body><p>La gestión de citas ahora se realiza desde <a href="{{ url('/psicologo/agenda-psicologo') }}">Agenda</a>.</p></body></html>

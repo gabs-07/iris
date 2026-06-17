@@ -1,0 +1,206 @@
+/* =========================================
+   RECUPERAR.CSS - Vista de Olvidar Contraseña
+   ========================================= */
+
+.recovery-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(68px + 2.5rem) 5% 3rem;
+    min-height: 100vh;
+}
+
+.recovery-container {
+    background: #fff;
+    width: 100%;
+    max-width: 480px;
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ─── Header ─── */
+.recovery-header {
+    text-align: center;
+    margin-bottom: 2.25rem;
+}
+
+.icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, rgba(61, 155, 122, 0.12) 0%, rgba(61, 155, 122, 0.06) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    color: var(--primary);
+    border: 1.5px solid rgba(61, 155, 122, 0.2);
+}
+
+.icon-wrapper.success {
+    background: linear-gradient(135deg, rgba(61, 155, 122, 0.15) 0%, rgba(61, 155, 122, 0.05) 100%);
+    color: var(--primary);
+}
+
+.recovery-header h1 {
+    font-size: 1.7rem;
+    margin-bottom: 0.6rem;
+    color: var(--text-dark);
+}
+
+.recovery-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.recovery-header p strong {
+    color: var(--text-dark);
+}
+
+/* ─── Input group ─── */
+.recovery-form .input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.recovery-form label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    width: 17px;
+    height: 17px;
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+.input-wrapper input,
+.recovery-form input[type="email"] {
+    width: 100%;
+    padding: 13px 16px 13px 42px;
+    background: var(--bg-main);
+    border: 1.5px solid transparent;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.recovery-form .input-group > input[type="email"] {
+    padding: 13px 16px 13px 42px;
+}
+
+.recovery-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(61, 155, 122, 0.1);
+}
+
+.input-hint {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+}
+
+/* ─── Botón full ─── */
+.btn-full {
+    width: 100%;
+    justify-content: center;
+}
+
+/* ─── Tips de éxito ─── */
+.success-tips {
+    background: var(--bg-main);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.success-tips h3 {
+    font-size: 0.9rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.85rem;
+}
+
+.success-tips ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.success-tips li {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.875rem;
+    color: var(--text-body);
+}
+
+.success-tips li svg {
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+/* ─── Footer ─── */
+.recovery-footer {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.back-to-login {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.back-to-login:hover {
+    color: var(--primary);
+}
+
+.back-to-login svg {
+    transition: var(--transition);
+}
+
+.back-to-login:hover svg {
+    transform: translateX(-3px);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 560px) {
+    .recovery-wrapper {
+        padding: calc(68px + 1.5rem) 4% 2rem;
+        align-items: flex-start;
+    }
+
+    .recovery-container {
+        padding: 2.25rem 1.5rem;
+    }
+}
